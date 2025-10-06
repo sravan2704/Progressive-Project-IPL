@@ -11,3 +11,41 @@ registerUsername: it will not contain any special characters
 registerEmail: it will be a valid email
 registerPassword: it will be of atleast 8 characters 
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registeration</title>
+    <link  type="style" href="css/bootstrap.css">
+</head>
+<body>
+    <script id="registerationScript" name="egisterationScript" type="text/javascript" src="js/validation.js"></script>
+    <h1>Register</h1>
+    <form id="registerationform" name="registerationform">
+        <label for="registerName">Username:</label><br>
+        <input type="text" id="registerName" name="registerName" placeholder="Enter Username" required><br>
+
+        <label for="registerPassword">Password:</label><br>
+        <input type="password" id="registerPassword" name="registerPassword" placeholder="Enter Password" required><br>
+
+        <label for="registerfullName">Full Name:</label><br>
+        <input type="text" id="registerUsername" name="registerfullName" placeholder="Enter Full Name" required><br>
+
+        <label for="registerEmail"> Email:</label><br>
+        <input type="email" id="registerEmail" name="registerEmail" placeholder="Enter Email" required><br>
+
+        <label for="roledropdownBtn">Role</label>
+        <select  id="roledropdownBtn" name="roledropdownBtn">
+            <option id="role_admin" name="role_admin" value="admin">Admin</option>
+            <option id="role_user" name="role_user" value="user">User</option>
+        </select>
+        <br>
+
+        <button type="button" id="registerBtn" name="registerBtn" onclick="">Create User</button>
+        <br>
+        <a href="./login.html" id="loginLink" name="loginLink">Login</a>
+    </form>
+</body>
+</html>
