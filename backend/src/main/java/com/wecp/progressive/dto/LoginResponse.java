@@ -7,6 +7,11 @@ public class LoginResponse {
 
    
 
+   public LoginResponse(String token, String roles, Integer userId) {
+      this.token = token;
+      this.roles = roles;
+      this.userId = userId;
+   }
    public LoginResponse(String token) {
       this.token = token;
    }

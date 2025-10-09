@@ -100,7 +100,7 @@ public class JwtUtil {
     {
         String username  = extractusername(token);
 
-        if(username != null && username.equals(userDetails.getUsername()) && !isTokenExpired(token))
+        if(username.equals(userDetails.getUsername()) && !isTokenExpired(token))
         {
             return true;
         }

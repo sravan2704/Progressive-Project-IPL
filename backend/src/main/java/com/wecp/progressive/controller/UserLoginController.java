@@ -69,6 +69,11 @@ public class UserLoginController {
 
         final String token = jwtUtil.generateToken(userDetails.getUsername());
 
-        return ResponseEntity.ok(new LoginResponse(token));
+        final User userObj = userRepository.findByUsername(loginRequest.getUsername());
+        if(userObj == null )
+        {
+            throw new RuntimeException("User not found");
+        }
+        return ResponseEntity.ok(new LoginResponse(token,userObj.getRole(),userObj.getUserId()));
     }
 }

@@ -48,12 +48,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 // .anyRequest().permitAll() // Allow all requests without authentication
                 .antMatchers(HttpMethod.POST,"/user/register","/user/login").permitAll()
-                .antMatchers(HttpMethod.GET,"/team","/team/**","/cricketer","/cricketer/**","/match","/match**").hasAuthority("USER")
-                .antMatchers(HttpMethod.POST,"/vote","/ticket").hasAuthority("USER")
-                .antMatchers(HttpMethod.POST,"/vote","/team/**","/cricketer","/match").hasAuthority("ADMIN")
-                .antMatchers(HttpMethod.PUT,"/team/**","/cricketer/**","/match/**").hasAuthority("ADMIN")
-                .antMatchers(HttpMethod.DELETE,"/team/**","/cricketer/**","/match/**").hasAuthority("ADMIN")
-                .antMatchers(HttpMethod.GET,"/vote/**","/ticket/**").hasAuthority("ADMIN")
+                .antMatchers(HttpMethod.GET,"/team","/team/**","/cricketer","/cricketer/**","/match","/match**").hasAnyAuthority("user","admin") //
+                .antMatchers(HttpMethod.POST,"/vote","/ticket").hasAuthority("user")
+                .antMatchers(HttpMethod.POST,"/vote","/team/**","/cricketer","/match").hasAuthority("admin")
+                .antMatchers(HttpMethod.PUT,"/team/**","/cricketer/**","/match/**").hasAuthority("admin")
+                .antMatchers(HttpMethod.DELETE,"/team/**","/cricketer/**","/match/**").hasAuthority("admin")
+                .antMatchers(HttpMethod.GET,"/vote/**","/ticket/**").hasAuthority("admin")
                 .anyRequest().authenticated()
                 .and()
                 .csrf().disable() // Disable CSRF protection if it's not needed
@@ -63,7 +63,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public AuthenticationManager authenticationManager() throws Exception
+    public AuthenticationManager authenticationManagerBean() throws Exception
     {
         return super.authenticationManagerBean();
     }

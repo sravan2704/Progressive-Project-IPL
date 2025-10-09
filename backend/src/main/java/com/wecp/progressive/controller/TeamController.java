@@ -49,7 +49,7 @@ public class TeamController {
 
     // @Autowired we should keep autowired becasue not related to jpa
     // @Qualifier("teamServiceImplArrayList")
-    private TeamServiceImplArraylist teamServiceImplArraylist;
+    private TeamServiceImplArraylist teamServiceImplArraylist = new TeamServiceImplArraylist();
 
     @Autowired
     private TeamServiceImplJpa teamServiceImplJpa;
