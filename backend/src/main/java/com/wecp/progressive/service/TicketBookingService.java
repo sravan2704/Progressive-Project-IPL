@@ -4,6 +4,9 @@ import com.wecp.progressive.entity.TicketBooking;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+
 public interface TicketBookingService {
     List<TicketBooking> getAllTicketBookings();
 

@@ -8,3 +8,27 @@
     -loginPassword: should not be empty
 
 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+    <link  type="style" href="css/bootstrap.css">
+</head>
+<body>
+    <script id="validationScript" name="validationScript" type="text/javascript" src="js/validation.js"></script>
+    <h1>Login</h1>
+    <form id="loginform" name="loginform">
+        <label for="name">Username</label><br>
+        <input type="text" id="loginUsername" name="name" placeholder="Enter Username" required><br>
+
+        <label for="password">Password</label><br>
+        <input type="password" id="loginPassword" name="password" placeholder="Enter Password" required><br>
+
+        <button type="button" id="loginBtn" name="loginBtn" onclick="login()">Login</button>
+        <br>
+        <a href="./registeration.html" id="signupLink" name="signupLink">Sign up</a>
+    </form>
+</body>
+</html>
